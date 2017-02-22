@@ -1,0 +1,59 @@
+body {
+  text-shadow: 0 1px 0 #999;
+}
+
+#toolbar {
+  background-color: #ddd;
+  padding: 5px;
+  border-bottom: 1px solid #aaa;
+  color: #aaa;
+}
+
+#toolbar button {
+}
+
+#dialog {
+  text-shadow: 0 1px 0 #262620;
+}
+
+.palette a {
+  height: 48px;
+  width: 48px;
+  display: inline-block;
+  border: 2px solid #464640;
+}
+
+.palette a.selected {
+  border-color: #9f9f90;
+}
+
+#terrain-palette a {
+  background-image: url(../images/terrain.png);
+}
+
+#unit-palette a {
+  background-image: url(../images/units-grey.png);
+}
+
+#unit-palette.blue a {
+  background-image: url(../images/units-blue.png);
+}
+
+#unit-palette.red a {
+  background-image: url(../images/units-red.png);
+}
+
+#unit-palette.green a {
+  background-image: url(../images/units-green.png);
+}
+
+#unit-palette.black a {
+  background-image: url(../images/units-black.png);
+}
+
+.level-data {
+  width: 500px;
+  height: 250;
+  border: 1px solid #000;
+  padding: 4px;
+}

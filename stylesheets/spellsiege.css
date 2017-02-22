@@ -1,0 +1,102 @@
+body {
+  background-color: #ccc;
+  font-family: fantasy;
+  text-shadow: 0 1px 0 #262620;
+  color: #fff;
+}
+
+body, li {
+  font-size: 12px;
+}
+
+body, h1, h2, form, input[type=checkbox] {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+  margin: 32px auto;
+}
+
+#mask, #dialog-wrap {
+  display: none;
+}
+
+#mask {
+  background-color: rgba(0, 0, 0, 0.66);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+#dialog-wrap {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.33);
+  padding: 5px;
+  z-index: 20;
+}
+
+#dialog, #speech {
+  border-width: 8px;
+  -webkit-border-image: url(../images/border.png) 8 8 8 8 repeat;
+  background-color: #212842;
+  padding: 15px;
+}
+
+#dialog a {
+  color: #fc9;
+}
+
+#speech-wrap {
+  display: none;
+  position: absolute;
+  height: 84px;
+  margin: 0;
+  padding: 0;
+}
+
+#speech {
+  display: table;
+  width: 100%;
+  height: 64px;
+  z-index: 19;
+  margin: 17px 0 0 0;
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.33);
+}
+
+#speech-content {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 85px;
+  font-size: 16px;
+}
+
+#portrait {
+  position: absolute;
+  width: 85px;
+  height: 84px;
+  margin: 0;
+  padding: 0;
+  background: transparent url(../images/faces.gif) no-repeat;
+  z-index: 20;
+}
+
+#unit-picker {
+  list-style-type: none;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+#instructions {
+  display: block;
+  width: 640px;
+  margin: 0 auto;
+  color: #000;
+  text-shadow: 0 1px 0 #eee;
+}

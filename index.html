@@ -1,0 +1,106 @@
+<html>
+<head>
+  <title>Spell Siege</title>
+  <link href="stylesheets/spellsiege.css" media="screen" rel="stylesheet" type="text/css" />
+
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/jquery-ui.min.js"></script>
+  <script src="lib/jquery-tmpl.min.js"></script>
+
+  <script src="javascripts/const.js"></script>
+  <script src="javascripts/pool.js"></script>
+  <script src="javascripts/event.js"></script>
+  <script src="javascripts/lzw.js"></script>
+  <script src="javascripts/sprite.js"></script>
+  <script src="javascripts/actor.js"></script>
+  <script src="javascripts/tween.js"></script>
+  <script src="javascripts/effect.js"></script>
+  <script src="javascripts/renderer.js"></script>
+  <script src="javascripts/terrain.js"></script>
+  <script src="javascripts/unittype.js"></script>
+  <script src="javascripts/player.js"></script>
+  <script src="javascripts/loader.js"></script>
+  <script src="javascripts/unit.js"></script>
+  <script src="javascripts/grave.js"></script>
+  <script src="javascripts/map.js"></script>
+  <script src="javascripts/cursor.js"></script>
+  <script src="javascripts/pathfinder.js"></script>
+  <script src="javascripts/pathfinder-route.js"></script>
+  <script src="javascripts/arrow.js"></script>
+  <script src="javascripts/ai.js"></script>
+  <script src="javascripts/level.js"></script>
+  <script src="javascripts/level1.js"></script>
+  <script src="javascripts/level2.js"></script>
+  <script src="javascripts/spellsiege.js"></script>
+  <script src="javascripts/ui.js"></script>
+  <script src="javascripts/play.js"></script>
+
+  <script id="capture-tmpl" type="text/x-jquery-tmpl">
+    Capture This ${name}?
+    <button onclick="Play.doCapture(); return false;">Yes</button>
+    <button onclick="Play.doCancel(); return false;">No</button>
+  </script>
+
+  <script id="factory-unit-tmpl" type="text/x-jquery-tmpl">
+    <li uid="${id}">${name} ${cost}</li>
+  </script>
+
+  <script id="factory-unit-details-tmpl" type="text/x-jquery-tmpl">
+    Details here
+    <button onclick="Play.build(${id}); return false;">Build</button>
+  </script>
+
+  <script id="factory-tmpl" type="text/x-jquery-tmpl">
+    <div id="factory">
+      Build a Unit?
+      <table cellpadding=0 cellspacing=0 border=0>
+        <tr valign=top>
+          <td>
+            <ul id="unit-picker"></ul>
+          </td>
+          <td id="unit-details">
+          </td>
+        </tr>
+      </table>
+      <button onclick="Dialog.hide(); return false;">Cancel</button>
+    </div>
+  </script>
+
+  <script id="repair-tmpl" type="text/x-jquery-tmpl">
+    Repair This ${name}?
+    <button onclick="Play.doRepair(); return false;">Yes</button>
+    <button onclick="Play.doCancel(); return false;">No</button>
+  </script>
+
+  <script id="start-turn-tmpl" type="text/x-jquery-tmpl">
+    New Turn! ${income} Income
+    <button onclick="Play.doStartTurn(); return false;">Begin</button>
+  </script>
+
+</head>
+<body>
+
+  <canvas id="gfx" width="640" height="480"></canvas>
+
+  <div id="mask"></div>
+
+  <div id="dialog-wrap"><div id="dialog"><div id="dialog-content"></div></div></div>
+
+  <div id="speech-wrap"><div id="portrait"></div><div id="speech"><div id="speech-content"></div></div></div>
+
+  <div id="instructions">
+    <u>Instructions</u>
+    <ol>
+      <li>You control the blue units, the enemy AI controls the red units</li>
+      <li>Click any character to select it. Yellow squares indicate the possible spaces the unit can move. Red squares indicate the attack range. Click the character to skip movement or attack phase.</li>
+      <li>Some units move before attacking, others attack before moving.</li>
+      <li>Once a unit has completed both actions it will gray out.  Once all units have been moved, your turn is over and the enemy will move.</li>
+      <li>Some units can repair damaged buildings by moving onto them.</li>
+      <li>Some units can capture castles and houses by moving onto them. Captured houses generate income at the beginning of each turn. Captured castles can build new units.</li>
+      <li>Some units, when killed, leave gravestones behind for a limited number of turns. The sorceress character can transform gravestones into skeleton soldiers.</li>
+      <li>Defeat all enemy units to win the game.</li>
+    </ol>
+  </div>
+
+</body>
+</html>
